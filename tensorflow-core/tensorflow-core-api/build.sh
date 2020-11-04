@@ -31,7 +31,7 @@ if [[ "${EXTENSION:-}" == *gpu* ]]; then
     fi
 fi
 
-BUILD_FLAGS="$BUILD_FLAGS --experimental_repo_remote_exec --python_path="$PYTHON_BIN_PATH" --output_filter=DONT_MATCH_ANYTHING --verbose_failures"
+BUILD_FLAGS="$BUILD_FLAGS --config=xla --experimental_repo_remote_exec --python_path="$PYTHON_BIN_PATH" --output_filter=DONT_MATCH_ANYTHING --verbose_failures"
 
 # Always allow distinct host configuration since we rely on the host JVM for a few things (this was disabled by default on windows)
 BUILD_FLAGS="$BUILD_FLAGS --distinct_host_configuration=true"
