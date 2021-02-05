@@ -52,7 +52,7 @@ jobs:
         run: |
           yum -y update
           yum -y install centos-release-scl-rh epel-release
-          yum -y install java-1.8.0-openjdk-devel devtoolset-7 rh-git218 patch python36-devel python36-numpy python36-pip python36-six
+          yum -y install java-1.8.0-openjdk-devel devtoolset-8 rh-git218 patch python36-devel python36-numpy python36-pip python36-six
           echo Downloading Maven
           curl -L https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -o $HOME/apache-maven-3.6.3-bin.tar.gz
           tar xzf $HOME/apache-maven-3.6.3-bin.tar.gz -C /opt/
@@ -75,7 +75,7 @@ jobs:
         uses: actions/checkout@v1
       - name: Build project
         run: |
-          source scl_source enable devtoolset-7 rh-git218 || true
+          source scl_source enable devtoolset-8 rh-git218 || true
           git --version
           gcc --version
           mvn -version
